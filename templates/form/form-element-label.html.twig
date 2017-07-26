@@ -23,3 +23,6 @@
 {% if title is not empty or required -%}
   <label{{ attributes.addClass(classes) }}>{{ title }}</label>
 {%- endif %}
+  {% if title_display not in ['after','before'] %}
+    <label{{ attributes.addClass(classes) }}></label>
+ {% endif %}
