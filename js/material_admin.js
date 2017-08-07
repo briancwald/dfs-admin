@@ -207,7 +207,7 @@
 
     Drupal.behaviors.material_admin_jqueryui_tooltip = {
         attach: function(context, settings) {
-         $(context).find('a.tooltip-item').once('material_admin_jqueryui_tooltip').each(function(k, v) {
+         $(context).find('a.tooltip-item').once('material_admin_jqueryui_tooltip').each(function() {
                 $('.tooltip-item').tooltip({
                     content: function() {
                         return $(this).prop('title');
@@ -215,11 +215,9 @@
                     show: null,
                     close: function(event, ui) {
                         ui.tooltip.hover(
-
                             function() {
                                 $(this).stop(true).fadeTo(400, 1);
                             },
-
                             function() {
                                 $(this).fadeOut("400", function() {
                                     $(this).remove();
