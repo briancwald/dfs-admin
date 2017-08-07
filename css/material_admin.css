@@ -6614,39 +6614,6 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 0;
   will-change: bottom, opacity; }
 
-/* line 1, node_modules/materialize-css/sass/components/_tooltip.scss */
-.material-tooltip {
-  padding: 10px 8px;
-  font-size: 1rem;
-  z-index: 2000;
-  background-color: transparent;
-  border-radius: 2px;
-  color: #fff;
-  min-height: 36px;
-  line-height: 120%;
-  opacity: 0;
-  position: absolute;
-  text-align: center;
-  max-width: calc(100% - 4px);
-  overflow: hidden;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  visibility: hidden; }
-
-/* line 21, node_modules/materialize-css/sass/components/_tooltip.scss */
-.backdrop {
-  position: absolute;
-  opacity: 0;
-  height: 7px;
-  width: 14px;
-  border-radius: 0 0 50% 50%;
-  background-color: #323232;
-  z-index: -1;
-  -ms-transform-origin: 50% 0%;
-      transform-origin: 50% 0%;
-  visibility: hidden; }
-
 /* line 1, node_modules/materialize-css/sass/components/_toast.scss */
 #toast-container {
   display: block;
