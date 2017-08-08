@@ -73,14 +73,27 @@ label {
 
 .description {
   //tooltip readability
-  .material-tooltip {
+  .ui-tooltip-content {
     max-width: 36em;
     line-height: 1.5em;
     font-weight: 100;
   }
 }
-.tooltipped, .filter-help {
+.tooltip-item, .filter-help {
   font-size: .8em;
+}
+
+.ui-tooltip.ui-widget {
+  background:rgba(0,0,0,0.85);
+  border-radius:0;
+  .ui-tooltip-content {
+    color:color("shades","white");
+    font-size:.9em;
+    a {
+      color:color("light-blue","base");
+      font-size:.9em;
+    }
+  }
 }
 
 .description.modal-trigger {
