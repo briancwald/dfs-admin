@@ -9,7 +9,7 @@
       @extend .material-icons;
 
       padding-right: 5px;
-      content: 'keyboard_arrow_right';
+      content: 'keyboard_arrow_right' #{"/*rtl:'keyboard_arrow_left'*/"};
     }
     &.active {
       &::before {
@@ -34,7 +34,7 @@
         @extend .material-icons;
 
         padding-right: 5px;
-        content: 'keyboard_arrow_right';
+        content: 'keyboard_arrow_right' #{"/*rtl:'keyboard_arrow_left'*/"};
       }
     }
   }

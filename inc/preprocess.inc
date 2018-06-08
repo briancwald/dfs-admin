@@ -18,6 +18,12 @@ function material_admin_preprocess_html(&$variables) {
   if (in_array($route_match, $portal_paths) && theme_get_setting('material_admin_portal_login')) {
     $variables['attributes']['class'][] = 'material_login';
   }
+
+  // Load specific library for pages with html attribute of RTL
+  if ($variables['html_attributes']['dir'] == 'rtl') {
+    $key = array_search('material_admin/global-styling',$variables['page']['#attached']['library']);
+    $variables['page']['#attached']['library'][$key] .= '-rtl';
+  }
 }
 
 /**

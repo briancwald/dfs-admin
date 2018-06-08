@@ -6,10 +6,7 @@
 .ajax-progress {
   display: inline-block;
   padding: 1px 5px 2px;
-}
-
-[dir='rtl'] .ajax-progress {
-  float: right;
+  float: left;
 }
 
 .ajax-progress-throbber {
@@ -55,9 +52,4 @@ tr .ajax-progress-throbber .throbber {
   padding: 4px;
   width: 150px;
   height: 150px;
-}
-
-[dir='rtl'] .ajax-progress-fullscreen {
-  right: 49%;
-  left: auto;
 }

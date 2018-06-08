@@ -18,7 +18,7 @@
 
       vertical-align: top;
       line-height: inherit;
-      content: 'keyboard_arrow_right';
+      content: 'keyboard_arrow_right' #{"/*rtl:'keyboard_arrow_left'*/"};
     }
     &:hover {
       background-color: transparent;
