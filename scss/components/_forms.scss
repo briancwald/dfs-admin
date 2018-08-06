@@ -10,12 +10,10 @@
     font-size: 1.3em;
   }
 }
-
 // overrride materializecss: label positoin relative to select elements
-.select-wrapper+label {
+.select-wrapper + label {
   top: -20px;
 }
-
 //override materializecss: dont set form width, only max width and allow the form fields to use its length.
 input:not([type]),
 input[type='text']:not(.browser-default),
@@ -32,7 +30,6 @@ input[type='search']:not(.browser-default) {
   width: inherit;
   max-width: 100%;
 }
-
 textarea.materialize-textarea {
   border-top: 1px solid transparent;
   border-right: 1px solid transparent;
@@ -44,18 +41,16 @@ textarea.materialize-textarea {
     border: 1px solid color($accent, 'lighten-1');
   }
 }
-
 .form-radios {
   margin: 25px 0;
   .form-item.form-type-radio {
     margin: 10px 0;
   }
 }
-
 .select-wrapper {
   width: 100%;
   max-width: 450px;
-  +label {
+  + label {
     transform: none;
     transition: none;
   }
@@ -63,7 +58,6 @@ textarea.materialize-textarea {
     visibility: hidden;
     &::after {
       @extend .material-icons;
-
       right: 0;
       visibility: visible;
       font-size: 2.5em;
@@ -74,36 +68,31 @@ textarea.materialize-textarea {
     max-width: inherit;
   }
 }
-
 // if browser default for <select> elements, set defaults
 .form-item.input-field-browser-default {
   margin: 25px 0 !important;
   max-width: 450px;
-  >select.browser-default {
+  > select.browser-default {
     padding: 0;
     font-size: inherit;
   }
   input {
     margin: 0;
     height: auto;
-
     box-sizing: border-box;
   }
   .description {
     padding-top: 5px;
   }
 }
-
 .views-field-node-bulk-form .form-type-checkbox {
   width: 35px;
 }
-
 .form-type-entity-autocomplete {
   label {
     padding-right: 1em;
   }
 }
-
 .form-item,
 .filter-wrapper .form-item,
 .form-item.password-parent,
@@ -121,85 +110,77 @@ textarea.materialize-textarea {
     }
   }
 }
-
 .filter-wrapper {
   overflow: initial;
 }
-
 //module extend page styling
 .requirements .admin-requirements {
   padding: .5em 0;
 }
-
 .package-listing .details-description .links {
   @extend .card-action;
-
   position: relative;
   border-top: 1px solid color($utility, 'lighten-3');
   background-color: inherit;
   padding: 16px 24px;
 }
-
 .details-wrapper table thead {
   border: 0;
 }
-
 //form items in tables require less margin (but only the tope level item)
-table td>.form-item,
-table td>.ajax-new-content>.form-item,
-table td .fieldset-wrapper>.form-item {
+table td > .form-item,
+table td > .ajax-new-content > .form-item,
+table td .fieldset-wrapper > .form-item {
   margin: 0;
-  &~.form-wrapper {
+  & ~ .form-wrapper {
     margin: 25px 0;
   }
 }
-
 table td .form-item .select-wrapper input.select-dropdown {
   margin: 0;
 }
-
 .input-field.js-form-type-checkbox label {
   top: 0;
 }
-
 input[type='checkbox'] {
   @extend .filled-in;
 }
+[type='checkbox'].filled-in:checked + label::before,
+input[type='checkbox'][type='checkbox']:checked + label::before {
+  top: 1px #{"/*rtl:2px*/"};
+  /*!rtl:begin:ignore*/
+  right: 11px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid $input-background;
+  transform: rotateZ(37deg);
+  transform-origin: 100% 100%;
+  /*!rtl:end:ignore*/
 
-[type='checkbox'].filled-in:checked+label::before,
-input[type='checkbox'][type='checkbox']:checked+label::before {
-  top: 1px;
 }
-
 #edit-actions {
   .button--danger {
     @extend .btn-flat;
-
     color: $error-text;
   }
   .button.use-ajax {
     @extend .btn;
   }
 }
-
 input.btn {
   margin: 5px;
   @media #{$medium-and-down} {
     margin-bottom: 1em;
   }
 }
-
 abbr.warning {
   text-decoration: none;
   color: $warning-text;
 }
-
 .switch {
   label {
     white-space: nowrap;
   }
 }
-
 //switch labels are overridden, so it tries to add it in via JS, this prevents 2 labels.
 .switch label:not(.switch-label) {
   display: inline-block;
@@ -208,26 +189,21 @@ abbr.warning {
   padding: 0;
   width: 1px;
   vertical-align: middle;
-
   clip: inherit;
 }
-
-.switch input[type='checkbox'][disabled]+.lever {
+.switch input[type='checkbox'][disabled] + .lever {
   background: color($utility, 'darken-2');
   cursor: not-allowed;
 }
-
 // align multiple checkboxes with label
-.input-field .dropdown-content [type='checkbox']+label {
+.input-field .dropdown-content [type='checkbox'] + label {
   display: inline;
   top: 0;
 }
-
 abbr[title] {
   border-bottom: 0;
 }
-
-//input form field handling 
+//input form field handling
 input:not([type]),
 input[type='text'],
 input[type='password'],
@@ -243,7 +219,6 @@ input[type='search'] {
   width: inherit;
   max-width: 100%;
 }
-
 //checkbox fix to work with materialize
 .js-form-type-checkbox {
   label.visually-hidden {
@@ -252,7 +227,6 @@ input[type='search'] {
     visibility: hidden;
     width: 1px;
     vertical-align: middle;
-
     clip: inherit;
     &::before,
     &::after {
@@ -260,36 +234,30 @@ input[type='search'] {
     }
   }
 }
-
 h4.label {
   font-size: 1rem;
   font-weight: bold;
 }
-
 //instead of replacing the collapsible with materialize which can cause issues with drupal AJAX, style the default details
 details.form-wrapper {
   @extend .collapsible;
-
   position: relative;
   text-align: left;
   summary::-webkit-details-marker {
     display: none;
   }
-  &[open]>summary::after {
+  &[open] > summary::after {
     @extend .material-icons,
     .collapse-down;
-
     line-height: 1em;
   }
   summary::after {
     @extend .material-icons,
     .collapse-right;
-
     line-height: 1em;
   }
   summary {
     @extend .collapsible-header;
-
     display: block;
     &:focus {
       outline: 0;
@@ -307,12 +275,10 @@ details.form-wrapper {
     }
   }
 }
-
 .entity-meta__header {
   @extend .shadow-box,
   .z-depth-1;
 }
-
 .entity-meta__last-saved h4,
 .entity-meta__author h4,
 .field--name-created h4 {
@@ -320,65 +286,52 @@ details.form-wrapper {
   font-weight: bold;
   &::before {
     @extend .material-icons;
-
     padding-right: 10px;
     vertical-align: baseline;
   }
 }
-
 .entity-meta__last-saved h4 {
   &::before {
     content: 'date_range';
   }
 }
-
 .form-type-date input.form-date {
   min-width: 175px;
 }
-
 .container-inline .form-item:not(.form-type-select) {
   display: inline-block;
   padding-right: 10px;
   min-width: 200px;
 }
-
 .container-inline label:empty::after,
 .container-inline .label:empty::after {
   content: '';
 }
-
 .form--inline,
 .dblog-filter-form {
   .form-actions {
     padding: 0 10px;
   }
 }
-
 .entity-meta__author h4 {
   &::before {
     content: 'person';
   }
 }
-
 a#edit-cancel {
   @extend .btn-flat;
-
   color: $warning-text;
 }
-
 .node-multiple-delete-confirm input.form-submit {
   @extend .error-color;
 }
-
 .confirm-form-wrapper {
   @extend .z-depth-1;
-
   padding: 1em;
   .form-actions {
     margin-top: 1em;
   }
 }
-
 //machine name display/edit
 .field-suffix {
   small {
@@ -388,12 +341,10 @@ a#edit-cancel {
     }
     span.admin-link {
       @extend .btn-flat;
-
       margin: 0 10px;
     }
   }
 }
-
 // field-prefix for inline values
 .input-field {
   label.inline-label {
@@ -410,8 +361,9 @@ a#edit-cancel {
       padding-right: 10px;
       vertical-align: middle;
       font-size: 1.25em;
-    } //align description with the textfield rather than the icon
-    ~.description {
+    }
+    //align description with the textfield rather than the icon
+    ~ .description {
       margin-left: 40px;
     }
     input[type='search'] {
@@ -423,42 +375,33 @@ a#edit-cancel {
     }
   }
 }
-
-
 .has-prefix-and-suffix,
 .has-prefix,
 .has-suffix {
-  >* {
+  > * {
     display: inline;
     width: inherit;
     vertical-align: middle;
   }
 }
-
 .dblog-filter-form .form-item-type,
 .dblog-filter-form .form-item-severity {
   min-width: 300px;
 }
-
 .entity-moderation-wrapper {
   padding-top: 10px;
 }
-
-.input-field.has-initial-content .select-wrapper+label {
+.input-field.has-initial-content .select-wrapper + label {
   transform: none;
   transition: none;
 }
-
 .input-field.has-initial-content label {
   transform: translateY(-14px) scale(0.8);
-
   transform-origin: 0 0;
 }
-
 .input-field.has-placeholder label {
   transform: none;
 }
-
 .input-field.file-field {
   input {
     max-width: 100%;
@@ -466,13 +409,12 @@ a#edit-cancel {
   &.form-has-label {
     margin: 45px 0;
     padding: 45px 0 0;
-    >label {
+    > label {
       position: absolute;
       font-size: 0.8rem;
     }
   }
 }
-
 //special case colleciton with links and no links to allow for large click area
 .help-collection .collection {
   .collection-item.has-collection-link {
@@ -489,7 +431,6 @@ a#edit-cancel {
     }
   }
 }
-
 // 'waves' input button padding fix
 i.waves-input-wrapper {
   padding: 0 !important;
@@ -498,7 +439,6 @@ i.waves-input-wrapper {
     height: 100%;
   }
 }
-
 .form-item-selected {
   .views-ui-view-title {
     display: inline-block;
@@ -511,19 +451,16 @@ i.waves-input-wrapper {
     font-weight: 300;
   }
 }
-
-//tablesaw fixes for form elements 
+//tablesaw fixes for form elements
 .tablesaw-cell-content .form-item {
   margin: 0;
 }
-
 .views-bulk-form-count {
   p {
     margin: 0;
     line-height: 40px;
   }
 }
-
 .layout-node-form .layout-region-node-secondary {
   details.form-wrapper {
     margin: 0;
@@ -539,7 +476,6 @@ i.waves-input-wrapper {
     margin-top: 1em;
   }
 }
-
 .image-style-new {
   display: inline-block;
   div {
@@ -551,7 +487,6 @@ i.waves-input-wrapper {
     margin: 0 1em !important;
   }
 }
-
 fieldset.form-wrapper {
   margin-left: 0;
   padding: 10px;
@@ -559,7 +494,6 @@ fieldset.form-wrapper {
     margin: 0 5px 5px 0;
     span.fieldset-legend {
       @extend .z-depth-1;
-
       background: color($primary, 'base');
       padding: 5px 10px;
       text-transform: uppercase;
@@ -573,7 +507,6 @@ fieldset.form-wrapper {
     }
   }
 }
-
 // For fieldgroups dont use teh fieldset border or z-depth to reduce clutter.
 fieldset.fieldgroup.form-wrapper {
   padding-left: 0;
@@ -582,7 +515,6 @@ fieldset.fieldgroup.form-wrapper {
     font-weight: 500;
     span.fieldset-legend {
       @extend .z-depth-0;
-
       background: transparent;
       padding-left: 0;
       color: color($primary, 'base');
@@ -594,15 +526,12 @@ fieldset.fieldgroup.form-wrapper {
     }
   }
 }
-
 .image-widget-data {
   position: relative;
 }
-
 .file-field input[type='file'] {
   width: auto;
 }
-
 .has-description-after:not(.input-field-browser-default) {
   input {
     margin-bottom: 10px !important;
@@ -611,14 +540,13 @@ fieldset.fieldgroup.form-wrapper {
     margin-bottom: 30px;
   }
 }
-
 .form--inline {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: baseline;
-  >div:not(.form--inline) {
+  > div:not(.form--inline) {
     flex: 1 auto;
     flex-basis: auto;
     min-width: 200px;
@@ -637,7 +565,6 @@ fieldset.fieldgroup.form-wrapper {
     flex-wrap: no-wrap;
   }
 }
-
 // This block overrides normal .collapsible styles.
 .exposed-form-collapsible {
   transition: .2s;
@@ -707,8 +634,7 @@ fieldset.fieldgroup.form-wrapper {
     }
   }
 }
-
-// textarea override format wrapper 
+// textarea override format wrapper
 .text-format-wrapper {
   .form-item.form-type-select.form-has-label {
     display: inline-block;

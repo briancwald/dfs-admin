@@ -12,6 +12,20 @@ global-styling:
     - core/jquery.once
     - core/drupalSettings
 
+global-styling-rtl:
+  version: VERSION
+  css:
+    base:
+      css/material_admin-rtl.css: {}
+  js:
+    js/lib/materialize.min.js: {}
+    js/material_admin.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings
+
 tables:
   version: VERSION
   js:

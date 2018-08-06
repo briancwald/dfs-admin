@@ -29,7 +29,7 @@ ol.task-list {
 
         vertical-align: middle;
         font-size: 1.5em;
-        content: 'arrow_right';
+        content: 'arrow_right' #{"/*rtl:'arrow_left'*/"};
       }
     }
   }

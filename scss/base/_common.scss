@@ -9,12 +9,12 @@
   a {
     color: color($action, 'base');
   }
+  /*!rtl:ignore*/
+  right: auto;
 }
-
 h1 {
   font-size: 2.5rem;
 }
-
 h2 {
   font-size: 2rem;
   &.small-header {
@@ -24,18 +24,14 @@ h2 {
     font-weight: 300;
   }
 }
-
 h3 {
   font-size: 1.5rem;
 }
-
 body {
   @include tablesaw-stack($small-screen);
-
   background: $body-background;
   font-family: $body-font-family;
 }
-
 @media #{$medium-and-up} {
   .material-container.row {
     margin: 0 auto !important;
@@ -46,48 +42,39 @@ body {
     width: $global-width;
   }
 }
-
 @media #{$small-and-down} {
-  #main-wrapper>.material-container.row {
+  #main-wrapper > .material-container.row {
     padding: 20px 0;
   }
 }
-
 .row.highlighted-container.material-container {
   padding: 0;
-  .region-highlighted>* {
+  .region-highlighted > * {
     padding-top: 20px;
     padding-bottom: 0;
   }
 }
-
 .row .row {
   padding: 20px 0;
 }
-
 hr {
   margin: 1em 0;
   border: 1px solid color($utility, 'lighten-2');
 }
-
 .show-radio-btn {
   position: relative !important;
 }
-
 .v-middle {
   vertical-align: middle;
 }
-
 .v-top {
   vertical-align: top;
 }
-
 .v-top {
-  i,span {
+  i, span {
     vertical-align: top;
   }
 }
-
 // Inputs inside dropbuttons dont align properly without this browser specifc styling.
 ul.dropbutton {
   input {
@@ -95,11 +82,9 @@ ul.dropbutton {
     vertical-align: -webkit-baseline-middle;
   }
 }
-
 label {
   box-sizing: border-box;
 }
-
 .description {
   //tooltip readability
   .material-tooltip {
@@ -108,7 +93,6 @@ label {
     font-weight: 100;
   }
 }
-
 .tooltipped,
 .filter-help {
   font-size: .8em;
@@ -117,63 +101,49 @@ label {
     font-size: 1.5em;
   }
 }
-
 .filter-help {
   text-align: right;
 }
-
 .text-format-wrapper {
   position: relative;
 }
-
 .error-text-color,
 .button--danger {
   color: $error-text;
 }
-
 .color-error {
   background: color($error-color-base, 'lighten-4');
 }
-
 .error-color,
 .errors-color {
   background: $error-bg;
 }
-
 .warning-text-color {
   color: $warning-text;
 }
-
 .color-warning {
   background: color($warning-color-base, 'lighten-4');
 }
-
 .warning-color,
 .warnings-color {
   background: $warning-bg;
 }
-
 .status-text-color {
   color: $status-text;
 }
-
 .color-success {
   background: color($status-color-base, 'lighten-4');
 }
-
 .status-color,
 .checked-color {
   background: $status-bg;
 }
-
 .button-action {
   @extend .btn;
-
   background: $button-action;
   color: $button-action-text;
   &::before {
     @extend .material-icons;
-
     display: inline-block;
     margin: 0 10px 0 0;
     vertical-align: text-top;
@@ -187,22 +157,17 @@ label {
     background: $button-action-hover;
   }
 }
-
-
 .button.button--danger {
   &:hover {
     background: color($utility, 'lighten-4') !important;
   }
 }
-
 .btn-flat-action {
   color: color($action, 'accent-2');
 }
-
 .inline {
   display: inline;
 }
-
 // buttons that appear as flat links
 .button-link {
   @extend .btn-flat;
@@ -210,16 +175,14 @@ label {
     background: color($utility, 'lighten-3');
   }
 }
-
 .collapse-right {
   position: absolute;
   right: 20px;
   color: color($utility, 'base');
   font-size: 1.5em;
   font-weight: 700;
-  content: 'keyboard_arrow_right';
+  content: 'keyboard_arrow_right' #{"/*rtl:'keyboard_arrow_left'*/"};
 }
-
 .collapse-down {
   position: absolute;
   right: 20px;
@@ -228,35 +191,28 @@ label {
   font-weight: 700;
   content: 'keyboard_arrow_down';
 }
-
 .toast {
   word-break: normal;
 }
-
 .row {
   margin: 0;
   padding: 20px;
 }
-
 .region-status {
   .row {
     padding: 0;
   }
 }
-
 .select-wrapper input.select-dropdown {
   user-select: none;
 }
-
-.btn+.btn {
+.btn + .btn {
   margin: 0 10px;
 }
-
 nav {
   box-shadow: none;
   background: transparent;
 }
-
 .action-links {
   margin-bottom: 2rem;
   li {
@@ -265,24 +221,20 @@ nav {
     list-style: none;
   }
 }
-
 a {
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 }
-
 a.button {
   &:hover {
     text-decoration: none;
   }
 }
-
 .x-small {
   height: $card-xs-height;
 }
-
 .card {
   .card-content {
     .card-title {
@@ -290,7 +242,6 @@ a.button {
     }
   }
 }
-
 .card-action {
   li {
     display: inline-block;
@@ -305,35 +256,28 @@ a.button {
     }
   }
 }
-
 .shadow {
   @extend .z-depth-1;
 }
-
 details {
   border: 0 !important;
 }
-
 .shadow-box {
   padding: 10px 15px;
 }
-
 .button--small {
   font-size: .8em;
   &::before {
     font-size: 1.1em;
   }
 }
-
 //change how clear fix works so it doesnt disrupt OOTB drupal clearfix
 .clearfix {
   clear: none;
 }
-
 .collapsible .collapsible-header {
   background: $body-background;
 }
-
 //arrows indicating open/closed collapsible component
 .collapsible li {
   position: relative;
@@ -348,7 +292,6 @@ details {
       &::after {
         @extend .material-icons;
         @extend .collapse-down;
-
         top: 0.5em;
       }
     }
@@ -363,12 +306,10 @@ details {
     &::after {
       @extend .material-icons;
       @extend .collapse-right;
-
       top: 0.5em;
     }
   }
 }
-
 .collapsible-body {
   font-weight: 500;
   .description {
@@ -376,55 +317,45 @@ details {
     font-weight: 300;
   }
 }
-
 details.form-wrapper summary {
   align-items: center;
 }
-
-
-// for the default drupal 'marker' add the badge styles 
+// for the default drupal 'marker' add the badge styles
 span.marker {
   @extend .badge;
-
   border-radius: 2px;
   background: color($accent, 'lighten-2');
   color: $white;
   font-size: .8em;
   font-weight: 300;
 }
-
 // override waves wrapper
 .waves-input-wrapper {
   vertical-align: middle;
 }
-
-.select-wrapper+label {
+.select-wrapper + label {
   left: 0;
-} //ckeditor fix as it wont work with box-sizing
+}
+//ckeditor fix as it wont work with box-sizing
 .ckeditor-buttons::before,
 .ckeditor-buttons::after,
 .ckeditor-buttons {
   box-sizing: initial;
 }
-
 //hide border from getting added to tabs by jqueryUI
 .tabs.tabs-transparent {
   border: 0;
 }
-
-
-//offset top tabs by removing the row margin to line the text up with the header 
+//offset top tabs by removing the row margin to line the text up with the header
 @media #{$medium-and-up} {
   .offset-tabs {
     margin-left: -20px;
   }
 }
-
 .collection.with-header .collection-header.no-bottom-border,
 .collection .collection-item:last-of-type {
   border-bottom: 0;
 }
-
 //FAB override
 .fixed-action-btn.horizontal ul {
   width: $global-width;
