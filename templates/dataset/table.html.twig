@@ -58,16 +58,27 @@
       <colgroup{{ colgroup.attributes }} />
     {% endif %}
   {% endfor %}
-
   {% if header %}
     <thead>
-      <tr>
-        {% for cell in header %}
+    {% if header is iterable %}
+      {% for subheader in header %}
+        <tr>
+        {% for cell in subheader %}
           <{{ cell.tag }}{{ cell.attributes }}>
-            {{- cell.content -}}
+          {{- cell.content -}}
           </{{ cell.tag }}>
         {% endfor %}
+        </tr>
+      {% endfor %}
+    {% else %}
+      <tr>
+      {% for cell in header %}
+        <{{ cell.tag }}{{ cell.attributes }}>
+        {{- cell.content -}}
+        </{{ cell.tag }}>
+      {% endfor %}
       </tr>
+    {% endif %}
     </thead>
   {% endif %}
 
@@ -105,3 +116,4 @@
   {% endif %}
 </table>
 </div>
+
